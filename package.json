@@ -1,0 +1,24 @@
+{
+  "name": "lgrinter-palindrome",
+  "version": "0.1.0",
+  "description": "Palindrome detector",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lgrinter/js_tutorial_tdd.git"
+  },
+  "keywords": [
+    "palindrome",
+    "learn-enough",
+    "javascript"
+  ],
+  "author": "Luke Grinter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lgrinter/js_tutorial_tdd/issues"
+  },
+  "homepage": "https://github.com/lgrinter/js_tutorial_tdd#readme"
+}
