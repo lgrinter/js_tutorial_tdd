@@ -1,27 +1,28 @@
 module.exports = Phrase;
 
-//Reverse a strong
-function reverse(string) {
-    return Array.from(string).reverse().join("");
+// Adds 'reverse' to all strings
+String.prototype.reverse = function() {
+    return Array.from(this).reverse().join("");
 }
 
 //Deinfes a Phrase object
 function Phrase(content) {
     this.content = content;
-    
-    //Sets content to lowercase
-    this.processor = function(string) {
-        return this.processor.toLowerCase();
-    }
-    
+
     //Returns content processed for palindrome testing.
     this.processedContent = function processedContent() {
-        return this.processor(this.content);
+        return this.letters().toLowerCase();
     }
-    
+
+    //Returns the letters in the content
+    // eg new Phrase("Hello, world!").letters() === "Helloworld"
+    this.letters = function letters() {
+         return (this.content.match(/[a-z]/gi) || []).join("");
+    }
+
     //Returns true if the phrase is a plaindrome, false otherwise
     this.palindrome = function palindrome() {
-        return this.processedContent() === reverse(this.processedContent());
+        return this.processedContent() === this.processedContent().reverse();
     }
 }
 
@@ -29,7 +30,7 @@ function Phrase(content) {
 function TranslatedPhrase(content, translation) {
     this.content = content;
     this.translation = translation;
-    
+
     //Returns translation processed for palindrome testing
     this.processedContent = function processedContent() {
         return this.processor(this.translation);
